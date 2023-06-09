@@ -41,7 +41,7 @@ const ManageClasses = () => {
                              <td>{item.seat}</td>
                              <td>{item.price}</td>
                              <td>{item.status}</td>
-                             <td>{'0'}</td>
+                             <td>0</td>
                              <td>{item.status}</td>
                              <td>
                                  <button className="btn btn-ghost btn-xs bg-orange-400">Update</button>
