@@ -1,0 +1,75 @@
+
+     [
+      {
+        "image": "https://i.ibb.co/gRz21vz/ale-romo-Tdr-UCJU6-VFs-unsplash.jpg",
+        "name": "Vinyasa Flow",
+        "instructor_name": "Sarah Johnson",
+        "available_seats": 20,
+        "price": 15.99
+      },
+      {
+        "image": "yoga_image2.jpg",
+        "name": "Hatha Yoga",
+        "instructor-name": "Michael Smith",
+        "available-seats": 10,
+        "price": 12.99
+      },
+      {
+        "image": "yoga_image3.jpg",
+        "name": "Power Yoga",
+        "instructor-name": "Emily Davis",
+        "available-seats": 15,
+        "price": 17.99
+      },
+      {
+        "image": "yoga_image4.jpg",
+        "name": "Yin Yoga",
+        "instructor-name": "David Thompson",
+        "available-seats": 8,
+        "price": 14.99
+      },
+      {
+        "image": "yoga_image5.jpg",
+        "name": "Restorative Yoga",
+        "instructor-name": "Jessica Roberts",
+        "available-seats": 12,
+        "price": 16.99
+      },
+      {
+        "image": "yoga_image6.jpg",
+        "name": "Ashtanga Yoga",
+        "instructor-name": "Daniel Brown",
+        "available-seats": 18,
+        "price": 19.99
+      },
+      {
+        "image": "yoga_image7.jpg",
+        "name": "Kundalini Yoga",
+        "instructor-name": "Olivia Wilson",
+        "available-seats": 15,
+        "price": 14.99
+      },
+      {
+        "image": "yoga_image8.jpg",
+        "name": "Gentle Yoga",
+        "instructor-name": "Christopher Lee",
+        "available-seats": 10,
+        "price": 13.99
+      },
+      {
+        "image": "yoga_image9.jpg",
+        "name": "Hot Yoga",
+        "instructor-name": "Sophia Anderson",
+        "available-seats": 15,
+        "price": 18.99
+      },
+      {
+        "image": "yoga_image10.jpg",
+        "name": "AcroYoga",
+        "instructor-name": "Ryan Johnson",
+        "available-seats": 10,
+        "price": 20.99
+      }
+    ]
+  
+  
