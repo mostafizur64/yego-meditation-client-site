@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, Navigate,  } from "react-router-dom";
+import { Link, Navigate, } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../Pages/Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
+
 
 const Registration = () => {
-    const {createUser,updateUserProfile} = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         createUser(data.email, data.password)
@@ -16,7 +18,7 @@ const Registration = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email,role:'student' }
+                        const saveUser = { name: data.name, email: data.email, role: 'student' }
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
@@ -24,27 +26,30 @@ const Registration = () => {
                             },
                             body: JSON.stringify(saveUser)
                         })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log('data is console ',data);
-                            if (data.insertedId) {
-                                reset();
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'User created successfully.',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                                Navigate('/');
-                            }
-                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log('data is console ', data);
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    Navigate('/');
+                                }
+                            })
                     })
                     .catch(error => console.log(error))
             })
     }
     return (
         <div>
+            <Helmet>
+                <title>Yoga Meditation | Register</title>
+            </Helmet>
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left w-full lg:w-1/2">
@@ -115,7 +120,7 @@ const Registration = () => {
                                 </div>
                             </form>
                             <span className="text-center text-black ">Already have and Account Please <Link to='/login ' className="text-red-600">Login</Link></span>
-                           <SocialLogin></SocialLogin>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>

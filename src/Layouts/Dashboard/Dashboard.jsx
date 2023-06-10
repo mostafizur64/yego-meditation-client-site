@@ -21,14 +21,15 @@ const Dashboard = () => {
                         isAdmin ? <>
                             <li><NavLink to="/"><FaHome></FaHome> Admin Home</NavLink></li>
                             <li><NavLink to="/dashboard/additem"> <FaUtensils></FaUtensils> Add Items</NavLink></li>
-                            <li><NavLink to="/dashboard/manageClasses"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
+                            <li><NavLink to="/dashboard/manageClasses"><FaWallet></FaWallet> Manage Clasess</NavLink></li>
+                            <li><NavLink to="/dashboard/manageUser"><FaBook></FaBook> Manage Users</NavLink></li>
                             <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
 
                         </>
                             : isInstructor ? <>
                                 <li><NavLink to="/"><FaHome></FaHome> Instructor Home Page</NavLink></li>
                                 <li><NavLink to="/dashboard/addClass"><FaHome></FaHome> My Add Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/updateClass"><FaHome></FaHome> My Update Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/myClass"><FaCalendarAlt></FaCalendarAlt> My Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
 

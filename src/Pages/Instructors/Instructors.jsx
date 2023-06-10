@@ -1,10 +1,12 @@
 import SingleInstructor from "./SingleInstructor";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "react-query";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
-       const [axiosSecure] = useAxiosSecure()
-    const {data: allInstructor=[],refetch} = useQuery(['allInstructors'],async()=>{
+
+    const [axiosSecure] = useAxiosSecure()
+    const { data: allInstructor = [], refetch } = useQuery(['allInstructors'], async () => {
         const res = await axiosSecure.get('/allInstructor')
         return res.data
     })
@@ -17,13 +19,20 @@ const Instructors = () => {
     //         })
     // }, [])
     return (
-        <div className="card w-full  shadow-xl grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8 p-8 ">
-            {
-                allInstructor.map((instructor,index)=>{
-                    return <SingleInstructor key={index} instructor={instructor}></SingleInstructor>
-                })
-            }
-        </div>
+        <>
+
+            <Helmet>
+                <title>Yoga Meditation | Instrutor</title>
+            </Helmet>
+            <div className="card w-full  shadow-xl grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8 p-8 ">
+                {
+                    allInstructor.map((instructor, index) => {
+                        return <SingleInstructor key={index} instructor={instructor}></SingleInstructor>
+                    })
+                }
+            </div>
+        </>
+
 
     );
 };

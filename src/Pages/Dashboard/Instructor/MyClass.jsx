@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useClassesByInstructor from "../../../Hooks/useClassesByInstructor";
 
 const MyClass = () => {
@@ -42,7 +43,7 @@ const MyClass = () => {
                                 <td>{'0'}</td>
                                 <td>{item.status}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs bg-orange-400">Update</button>
+                                    <Link to={`/dashboard/updateClass/${item._id}`} className="btn btn-ghost btn-xs bg-orange-400">Update</Link>
                                 </td>
                             </tr>
                             )
