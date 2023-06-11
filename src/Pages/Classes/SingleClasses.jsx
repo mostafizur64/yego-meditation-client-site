@@ -6,8 +6,7 @@ const SingleClasses = ({ item }) => {
     const [findUser, setFindUser] = useState({});
     const { className, image, seat, price, instructorName, _id } = item;
 
-    console.log(findUser);
-
+   
     const { user } = useAuth();
 
 
@@ -42,7 +41,7 @@ const SingleClasses = ({ item }) => {
         fetch(`http://localhost:5000/users-findUser/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setFindUser(data)
+                setFindUser(data);
             })
     }, [user?.email]);
 

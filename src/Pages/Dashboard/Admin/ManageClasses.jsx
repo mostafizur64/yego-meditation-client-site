@@ -2,32 +2,36 @@ import { useQuery } from "react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-hot-toast";
+import DeniedModal from "./DeniedModal";
+import { useState } from "react";
 
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure()
+    const [modal, setModal] = useState({})
     const { data: allClasses = [], refetch } = useQuery(['allClass'], async () => {
         const res = await axiosSecure.get('/allClass');
         return res.data;
     });
 
-    const  handleApproved = (id) =>{
-        fetch(`http://localhost:5000/class-statusChange/${id}`,{
-            method:'PATCH',
+    const handleApproved = (id) => {
+        fetch(`http://localhost:5000/class-statusChange/${id}`, {
+            method: 'PATCH',
         })
-        .then(res=>res.json())
-        .then(data=>{
-            refetch()
-            if(data.modifiedCount){
-                toast.success('status approved');
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                refetch()
+                if (data.modifiedCount) {
+                    toast.success('status approved');
+                }
+            })
 
     }
+
     return (
         <>
-        <Helmet>
-            <title>Yoga Meditation | Manage Class</title>
-        </Helmet>
+            <Helmet>
+                <title>Yoga Meditation | Manage Class</title>
+            </Helmet>
             <div className="w-full px-8">
                 <h2 className="text-4xl text-center">Class Added By Instructor</h2>
                 <div className="overflow-x-auto mt-4">
@@ -63,18 +67,22 @@ const ManageClasses = () => {
                                     <td>{item.status}</td>
                                     <td>0</td>
                                     <td>{item.status}</td>
-                                    <td>
-                                    
-                                        <button onClick={()=>handleApproved(item._id)} className="btn btn-ghost btn-xs bg-orange-400">Approved</button>
-                                        <button className="btn btn-ghost btn-xs bg-orange-400">Denied</button>  
+                                    <td className="">
+                                        <label disabled={item.status === 'approved' || item.status === 'denied'} onClick={() => setModal(item)} htmlFor="my_modal_6" className="btn btn-ghost btn-xs bg-orange-400">Denied</label>
+                                        <button disabled={item.status === 'approved' || item.status === 'denied'} onClick={() => handleApproved(item._id)} className="btn btn-ghost btn-xs bg-orange-400">Approved</button>
+                                        {/* <button onClick={() => handleDeined => (item._id)} className="btn btn-ghost btn-xs bg-orange-400">Denied</button> */}
+
+
                                     </td>
                                 </tr>
+
                                 )
                             }
                         </tbody>
 
 
                     </table>
+                    <DeniedModal modal={modal}></DeniedModal>
                 </div>
             </div>
         </>

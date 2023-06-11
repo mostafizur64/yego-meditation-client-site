@@ -15,7 +15,7 @@ const WhatWeDo = () => {
             <div>
                 <h2 className="text-3xl text-center mt-8">What We Do</h2>
             </div>
-            {whatWeDo.length}
+         
             <div className=" w-full  grid grid-cols-1 lg:grid-cols-3 gap-4">
               {
                 whatWeDo.slice(0,6).map((item,index)=><SingleWhatWeDo key={index} item={item}></SingleWhatWeDo>)

@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         element: <EnrolledClass></EnrolledClass>
       },
       {
-        path:'payment',
+        path:'payment/:id',
         element:<Payment></Payment>
       },
       //instructor route
@@ -77,7 +77,9 @@ const router = createBrowserRouter([
       },
       {
         path:'updateClass/:id',
-        element:<UpdateClass></UpdateClass>
+        element:<UpdateClass></UpdateClass>,
+        loader:({params})=>fetch(`http://localhost:5000/singleClass/${params.id}`)
+       
       },
       // admin route  
       {

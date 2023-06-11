@@ -42,7 +42,7 @@ const SelectedClass = () => {
             <div className="w-full px-8">
                 <h2 className="text-4xl text-center">Class Added By Instructor</h2>
             <div className="flex mr-8 gap-3 items-center mt-4">
-            <button className="btn btn-success"> <Link to='/dashboard/payment'>Payment</Link></button>
+            {/* <button className="btn btn-success"> <Link to='/dashboard/payment'>Payment</Link></button> */}
               <p className="text-orange-600 text-2xl">total Amount $ {total}</p>
             </div>
                 <div className="overflow-x-auto mt-4">
@@ -64,7 +64,7 @@ const SelectedClass = () => {
                         <tbody>
 
                             {
-                                bookedClassByStudent.map((item, index) => <tr key={item._id}>
+                                bookedClassByStudent.filter(booked=>booked.paid !== 'paid').map((item, index) => <tr key={item._id}>
                                     <td>{index + 1}</td>
                                     <td>{item.className}</td>
                                     <td>
@@ -80,6 +80,7 @@ const SelectedClass = () => {
                                     <td>{'0'}</td>
                                     <td>{item.status}</td>
                                     <td>
+                                        <Link to={`/dashboard/payment/${item._id}`} className="btn btn-ghost btn-xs bg-green-400">Payment</Link>
                                         <button onClick={()=>handleDelete(item)} className="btn btn-ghost btn-xs bg-orange-400">Delete</button>
                                     </td>
                                 </tr>

@@ -5,7 +5,8 @@ import useAuth from "../../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
 import './checkOutFrom.css';
 
-const CheckOutFrom = ({ price, bookedClassByStudent }) => {
+const CheckOutFrom = ({ payment }) => {
+    const { price, className, _id, } = payment;
     const stripe = useStripe();
     const elements = useElements();
     const [axiosSecure] = useAxiosSecure()
@@ -16,14 +17,14 @@ const CheckOutFrom = ({ price, bookedClassByStudent }) => {
     const [transactionId, setTransactionId] = useState('')
 
     useEffect(() => {
-       if(price>0){
-        axiosSecure.post('/create-payment-intent', { price })
-        .then(res => {
+        if (price > 0) {
+            axiosSecure.post('/create-payment-intent', { price })
+                .then(res => {
 
-            setClientSecret(res.data.clientSecret)
+                    setClientSecret(res.data.clientSecret)
 
-        })
-       }
+                })
+        }
     }, [price, axiosSecure])
 
 
@@ -70,24 +71,37 @@ const CheckOutFrom = ({ price, bookedClassByStudent }) => {
         if (paymentIntent.status === "succeeded") {
             setTransactionId(paymentIntent.id);
             const payment = {
+                // email: user?.email,
+                // transactionId: paymentIntent.id,
+                // price,
+                // date: new Date(),
+                // quantity: bookedClassByStudent.length,
+                // cartItems: bookedClassByStudent.map(item => item._id),
+                // bookedItems: bookedClassByStudent.map(item => item.bookedId),
+                // itemName: bookedClassByStudent.map(item => item.className);
+
                 email: user?.email,
                 transactionId: paymentIntent.id,
-                price,
+                price: price,
                 date: new Date(),
-                quantity: bookedClassByStudent.length,
-                cartItems: bookedClassByStudent.map(item => item._id),
-                bookedItems: bookedClassByStudent.map(item => item.bookedId),
-                itemName: bookedClassByStudent.map(item => item.className),
-
-
+                className: className,
+                bookedId: _id,
             }
-            axiosSecure.post('/payments',payment)
-            .then(res=>{
-                console.log(res.data);
-                if(res.data.insertResult.insertedId){
-                  toast.success('payment done')
-                }
-            })
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    // console.log(res.data);
+
+                    if (res.data.insertResult.insertedId) {
+                      
+                        fetch(`http://localhost:5000/afterPaymentBooked/${_id}`,{
+                            method:'PUT'
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                toast.success('payment done',data)
+                            });
+                    }
+                })
 
         }
     };

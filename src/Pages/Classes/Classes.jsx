@@ -10,7 +10,9 @@ const Classes = () => {
     const { data: allClass = [], refetch } = useQuery(['users'], async () => {
         const res = await axiosSecure.get('/allClass')
         return res.data;
+    
     })
+    console.log('all class are here ',allClass);
     // useEffect(() => {
     //     fetch('/yogaclasses.json')
     //         .then(res => res.json())
@@ -26,7 +28,7 @@ const Classes = () => {
             </Helmet>
             <div className="card w-full bg-base-100 shadow-xl grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 ">
                 {
-                    allClass.map((item, index) => {
+                    allClass.filter(pending =>pending.status !== 'pending').map((item, index) => {
                         return <SingleClasses key={index} item={item}></SingleClasses>
                     })
                 }

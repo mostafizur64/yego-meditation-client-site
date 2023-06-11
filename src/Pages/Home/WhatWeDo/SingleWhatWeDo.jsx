@@ -4,7 +4,7 @@ const SingleWhatWeDo = ({ item }) => {
     const { name, image, description } = item
     return (
         <>
-<div className="border-2 rounded-md p-8 bg-gray-100 hover:bg-red-100 transition duration-500 ease-in-out transform">
+<div className=" rounded-md p-8  hover:bg-[#6772e5] transition duration-500 ease-in-out transform">
   <div className="text-center w-20 mx-auto bg-white-700 relative group">
     <img className="rounded-full" src={image} alt="Shoes" />
     <div className="absolute inset-0 hidden group-hover:block">
