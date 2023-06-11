@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import TopSlider from "../TopSlider/TopSlider";
+import WhatWeDo from "../WhatWeDo/WhatWeDo";
 
 const Home = () => {
     return (
@@ -8,6 +9,8 @@ const Home = () => {
                 <title>Yoga Meditation | Home</title>
             </Helmet>
            <TopSlider></TopSlider>
+           {/* //TODO  */}
+           <WhatWeDo></WhatWeDo>
         </div>
     );
 };

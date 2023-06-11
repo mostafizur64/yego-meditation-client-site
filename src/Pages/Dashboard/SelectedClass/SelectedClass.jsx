@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 const SelectedClass = () => {
     const [axiosSecure] = useAxiosSecure()
     const [bookedClassByStudent, , refetch] = useBookedClassesByStudent();
+    const total = bookedClassByStudent.reduce((sum, item) => item.price + sum, 0);
+
     const handleDelete = (item) =>{
         Swal.fire({
             title: 'Are you sure?',
@@ -39,6 +41,10 @@ const SelectedClass = () => {
             this is selected Class !{bookedClassByStudent.length}
             <div className="w-full px-8">
                 <h2 className="text-4xl text-center">Class Added By Instructor</h2>
+            <div className="flex mr-8 gap-3 items-center mt-4">
+            <button className="btn btn-success"> <Link to='/dashboard/payment'>Payment</Link></button>
+              <p className="text-orange-600 text-2xl">total Amount $ {total}</p>
+            </div>
                 <div className="overflow-x-auto mt-4">
                     <table className="table">
                         <thead>
