@@ -11,7 +11,6 @@ const InstructorRoute = ({ children }) => {
     if(loading || isAdminLoading){
         return <progress className="progress w-56"></progress>
     }
-
     if (user && isInstructor) {
         return children;
     }
