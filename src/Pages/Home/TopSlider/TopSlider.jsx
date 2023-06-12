@@ -20,7 +20,6 @@ const TopSlider = () => {
                     <h3 className="text-4xl text-semibold">Daily Yog Used For Healthy Life</h3>
                     <h4 className="text-2xl mt-2">Few minute of Yoga Healthy life</h4>
                     <button className="bg-green-950 p-2 rounded text-white mt-4">Visit Now</button>
-                    
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
