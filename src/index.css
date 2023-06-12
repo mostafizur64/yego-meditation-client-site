@@ -1,3 +1,18 @@
+:root{
+  --body_background : white;
+  --body-color:black;
+  --link-color:navy;
+}
+[data-theme='dark']{
+  --body_background : #282c34;
+  --body_color:white;
+  --link_color:cyan
+}
+
+*{
+  transition:  all 0.3s ease-in-out;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

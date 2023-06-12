@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "../../../Components/Container";
 import useAuth from "../../../Hooks/useAuth";
+import DarkMode from "../../../Components/DarkMode/DarkMode";
 
 
 const Navbar = () => {
@@ -28,6 +29,7 @@ const handleSignOut = ()=>{
         <li><Link to='/login' className=" bg-green-950 text-white hover:bg-red-500">Login</Link></li>
         </>
        }
+       <DarkMode></DarkMode>
 
       
     </>

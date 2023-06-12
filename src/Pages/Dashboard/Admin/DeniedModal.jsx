@@ -1,21 +1,32 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const DeniedModal = ({ modal }) => {
     console.log('modal datga', modal);
     const [feedBack, setFeedBack] = useState('');
-    console.log('feed back',feedBack);
-    const handleFeedBack = () =>{
-        fetch(`http://localhost:5000/sendFeedBack/${modal._id}`,{
-            method:'PUT',
-            headers:{
-                'contents-type':'application.json',
+    console.log('feed back', feedBack);
+    const handleFeedBack = () => {
+        fetch(`http://localhost:5000/sendFeedBack/${modal._id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            body:JSON.stringify(feedBack) 
+            body: JSON.stringify({ feedback: feedBack })
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                fetch(`http://localhost:5000/class-statusDenied/${modal._id}`, {
+                    method: 'PATCH',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                       
+                        if (data.modifiedCount) {
+                            toast.success('status Denied');
+                        }
+                    })
+            })
     }
     return (
         <>

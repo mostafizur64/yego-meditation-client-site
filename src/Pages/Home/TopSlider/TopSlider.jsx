@@ -17,25 +17,28 @@ const TopSlider = () => {
                 <SwiperSlide>
                   <img className="w-full h-[600px]" src={slider1} alt="" />
                   <div className="absolute hidden lg:block  lg:-mt-[380px] lg:ml-[640px]   text-center  justify-center"> 
-                    <h3 className="text-3xl">Daily Yog Used For Healthy Life</h3>
-                    <h4 className="text-2xl">Few minute of Yoga Healthy life</h4>
-                    <button>Visit Now</button>
+                    <h3 className="text-4xl text-semibold">Daily Yog Used For Healthy Life</h3>
+                    <h4 className="text-2xl mt-2">Few minute of Yoga Healthy life</h4>
+                    <button className="bg-green-950 p-2 rounded text-white mt-4">Visit Now</button>
+                    
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                 <img className="w-full h-[600px]" src={slider2} alt="" />
                 <div className="absolute hidden lg:block  lg:-mt-[380px] lg:ml-[160px]   text-center  justify-center"> 
-                    <h3 className="text-3xl">Daily Yog Used For Healthy Life</h3>
-                    <h4 className="text-2xl">Few minute of Yoga Healthy life</h4>
-                    <button>Visit Now</button>
+                    <h3 className="text-4xl text-semibold">Daily Yog Used For Healthy Life</h3>
+                    <h4 className="text-2xl mt-2">Few minute of Yoga Healthy life</h4>
+                    <button className="bg-green-950 p-2 rounded text-white mt-4">Visit Now</button>
+
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                 <img className="w-full h-[600px]" src={slider3} alt="" />
                 <div className="absolute hidden lg:block  lg:-mt-[380px] lg:ml-[660px]   text-center  justify-center">  
-                    <h3 className="text-3xl">Daily Yog Used For Healthy Life</h3>
-                    <h4 className="text-2xl">Few minute of Yoga Healthy life</h4>
-                    <button>Visit Now</button>
+                    <h3 className="text-4xl text-semibold">Daily Yog Used For Healthy Life</h3>
+                    <h4 className="text-2xl mt-2">Few minute of Yoga Healthy life</h4>
+                    <button className="bg-green-950 p-2 rounded text-white mt-4">Visit Now</button>
+
                   </div>
                 </SwiperSlide>
             </Swiper>

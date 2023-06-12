@@ -3,8 +3,9 @@ import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
 const SingleClasses = ({ item }) => {
+    console.log('item is itrem',item);
     const [findUser, setFindUser] = useState({});
-    const { className, image, seat, price, instructorName, _id } = item;
+    const { className, image, seat, price, instructorName, _id,instructorEmail } = item;
 
    
     const { user } = useAuth();
@@ -13,7 +14,7 @@ const SingleClasses = ({ item }) => {
     const handleBookedClass = () => {
       
         if(user && user?.email){
-            const bookedItem = { bookedId: _id,studentName:user.displayName,studentEmail:user.email, className, image, seat, price: parseInt(price), instructorName };
+            const bookedItem = { bookedId: _id,studentName:user.displayName,studentEmail:user.email, className, image, seat, price: parseInt(price), instructorName,instructorEmail };
             fetch('http://localhost:5000/bookedClass', {
                 method: 'POST',
                 headers: {

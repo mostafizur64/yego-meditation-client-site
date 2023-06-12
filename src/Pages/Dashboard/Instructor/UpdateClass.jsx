@@ -79,7 +79,7 @@ const UpdateClass = () => {
                        
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn btn-primary btn-block" type="submit" value="UPDATE TOY" />
+                        <input className="btn btn-primary btn-block" type="submit" value="UPDATE ClASS" />
                     </div>
                 </div>
             </form>

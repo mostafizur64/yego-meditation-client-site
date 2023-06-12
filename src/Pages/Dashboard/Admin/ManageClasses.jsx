@@ -44,7 +44,6 @@ const ManageClasses = () => {
                                 <th>Available Seat </th>
                                 <th>Price</th>
                                 <th>Status</th>
-                                <th>Enrolled Student</th>
                                 <th>FeedBack</th>
                                 <th>Action</th>
                                 <th></th>
@@ -65,8 +64,7 @@ const ManageClasses = () => {
                                     <td>{item.seat}</td>
                                     <td>{item.price}</td>
                                     <td>{item.status}</td>
-                                    <td>0</td>
-                                    <td>{item.status}</td>
+                                    <td>{item.feedback}</td>
                                     <td className="">
                                         <label disabled={item.status === 'approved' || item.status === 'denied'} onClick={() => setModal(item)} htmlFor="my_modal_6" className="btn btn-ghost btn-xs bg-orange-400">Denied</label>
                                         <button disabled={item.status === 'approved' || item.status === 'denied'} onClick={() => handleApproved(item._id)} className="btn btn-ghost btn-xs bg-orange-400">Approved</button>

@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import useClassesByInstructor from "../../../Hooks/useClassesByInstructor";
+import useTotalEnrolledStudent from "../../../Hooks/useTotalEnrolledStudent";
 
 const MyClass = () => {
 
     const [ClassesByInstructor]= useClassesByInstructor();
+ 
+    const [totalEnrolled] = useTotalEnrolledStudent()
+    console.log('total enroled stuend',ClassesByInstructor);
+
+
+
 
     return (
         <div className="w-full px-8">
            <h2 className="text-4xl text-center">Class Added By Instructor</h2>
+           <h2 className="text-3xl text-center text-orange-400">Total Enrolled class :{totalEnrolled.length} </h2>
             <div className="overflow-x-auto mt-4">
                 <table className="table">
                     <thead>
@@ -18,7 +26,7 @@ const MyClass = () => {
                             <th>Available Seat </th>
                             <th>Price</th>
                             <th>Status</th>
-                            <th>Enrolled Student</th>
+                            
                             <th>FeedBack</th>
                             <th>Action</th>
                             <th></th>
@@ -40,8 +48,7 @@ const MyClass = () => {
                                 <td>{item.seat}</td>
                                 <td>{item.price}</td>
                                 <td>{item.status}</td>
-                                <td>{'0'}</td>
-                                <td>{item.status}</td>
+                                <td>{item.feedback}</td>
                                 <td>
                                     <Link to={`/dashboard/updateClass/${item._id}`} className="btn btn-ghost btn-xs bg-orange-400">Update</Link>
                                 </td>

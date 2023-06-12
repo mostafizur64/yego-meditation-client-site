@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
-import './checkOutFrom.css';
+// import './checkOutFrom.css';
 
 const CheckOutFrom = ({ payment }) => {
-    const { price, className, _id, } = payment;
+    const { price, className, _id,instructorEmail } = payment;
+    console.log('pyment ',payment);
     const stripe = useStripe();
     const elements = useElements();
     const [axiosSecure] = useAxiosSecure()
@@ -86,6 +87,7 @@ const CheckOutFrom = ({ payment }) => {
                 date: new Date(),
                 className: className,
                 bookedId: _id,
+                instructorEmail:instructorEmail
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
@@ -101,6 +103,7 @@ const CheckOutFrom = ({ payment }) => {
                                 toast.success('payment done',data)
                             });
                     }
+                    
                 })
 
         }

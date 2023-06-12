@@ -17,6 +17,9 @@ import ManageClasses from "../Pages/Dashboard/Admin/ManageClasses";
 import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 import UpdateClass from "../Pages/Dashboard/Instructor/UpdateClass";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistroy/PaymentHistory";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 const router = createBrowserRouter([
@@ -63,32 +66,36 @@ const router = createBrowserRouter([
         element: <EnrolledClass></EnrolledClass>
       },
       {
+        path:'paymentHistory',
+        element:<PaymentHistory></PaymentHistory>
+      },
+      {
         path:'payment/:id',
         element:<Payment></Payment>
       },
       //instructor route
       {
         path: 'addClass',
-        element: <AddClass></AddClass>
+        element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
       },
       {
         path: 'myClass',
-        element: <MyClass></MyClass>
+        element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
       },
       {
         path:'updateClass/:id',
-        element:<UpdateClass></UpdateClass>,
+        element:<InstructorRoute><UpdateClass></UpdateClass></InstructorRoute>,
         loader:({params})=>fetch(`http://localhost:5000/singleClass/${params.id}`)
        
       },
       // admin route  
       {
         path:'manageClasses',
-        element:<ManageClasses></ManageClasses>
+        element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
       },
       {
         path:'manageUser',
-        element:<ManageUser></ManageUser>
+        element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
       }
     ]
   },

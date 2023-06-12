@@ -7,20 +7,13 @@ import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
     const [axiosSecure] = useAxiosSecure()
-    const { data: allClass = [], refetch } = useQuery(['users'], async () => {
+    const { data: allClass = [] } = useQuery(['users'], async () => {
         const res = await axiosSecure.get('/allClass')
         return res.data;
     
     })
-    console.log('all class are here ',allClass);
-    // useEffect(() => {
-    //     fetch('/yogaclasses.json')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             setClasses(data)
-    //         })
-    // }, [])
+
+
     return (
         <div>
             <Helmet>

@@ -11,6 +11,7 @@ const Payment = () => {
     const { id } = useParams();
     console.log('id lagbe ',id);
     const [payment ,setPayment] = useState({})
+    console.log('payment',payment);
     // const [bookedClassByStudent] = useBookedClassesByStudent();
     // const total = bookedClassByStudent.reduce((sum, item) => sum + item.price, 0);
     // const price = parseFloat(total.toFixed(2))
