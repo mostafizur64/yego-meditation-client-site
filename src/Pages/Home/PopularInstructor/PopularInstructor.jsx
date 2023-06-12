@@ -26,14 +26,6 @@ const PopularInstructor = () => {
     }, [])
     return (
         <div>
-
-            {/* <div className="card w-full  shadow-xl grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8 p-8 ">
-                {
-                    popularInstructor.map((instructor, index) => {
-                        return <PopularSingleInstructor key={index} instructor={instructor}></PopularSingleInstructor>
-                    })
-                }
-            </div> */}
               <div>
                         <h2 className="text-4xl text-extrabold text-center mt-8 text-orange-400">--- Our Popular Instructor ---</h2>
                     </div>
