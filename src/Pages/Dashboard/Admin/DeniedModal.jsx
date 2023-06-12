@@ -30,10 +30,7 @@ const DeniedModal = ({ modal }) => {
     }
     return (
         <>
-            {/* The button to open modal */}
-
-
-            {/* Put this part before </body> tag */}
+           
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
