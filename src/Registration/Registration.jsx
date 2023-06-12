@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import SocialLogin from "../Pages/Shared/SocialLogin/SocialLogin";
 import { Helmet } from "react-helmet-async";
 
-
 const Registration = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
