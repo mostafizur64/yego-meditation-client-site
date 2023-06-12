@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 
 const SocialLogin = () => {
-
     const { googleSignIn } = useContext(AuthContext)
     const location = useLocation()
     const from = location.state?.from?.pathName || '/';
@@ -37,5 +36,4 @@ const SocialLogin = () => {
         </div>
     );
 };
-
 export default SocialLogin;
