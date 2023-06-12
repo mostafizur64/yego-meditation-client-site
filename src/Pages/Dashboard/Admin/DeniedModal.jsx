@@ -6,7 +6,7 @@ const DeniedModal = ({ modal }) => {
     const [feedBack, setFeedBack] = useState('');
     console.log('feed back', feedBack);
     const handleFeedBack = () => {
-        fetch(`http://localhost:5000/sendFeedBack/${modal._id}`, {
+        fetch(`https://yoga-meditation-server-site.vercel.app/sendFeedBack/${modal._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ const DeniedModal = ({ modal }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                fetch(`http://localhost:5000/class-statusDenied/${modal._id}`, {
+                fetch(`https://yoga-meditation-server-site.vercel.app/class-statusDenied/${modal._id}`, {
                     method: 'PATCH',
                 })
                     .then(res => res.json())

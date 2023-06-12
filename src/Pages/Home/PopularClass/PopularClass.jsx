@@ -9,7 +9,7 @@ import SinglePopularClass from "./SinglePopularClass";
 const PopularClass = () => {
     const [popularClass, setPopularClass] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/showPopularClass').
+        fetch('https://yoga-meditation-server-site.vercel.app/showPopularClass').
             then(res => res.json())
             .then(data => {
                 setPopularClass(data)

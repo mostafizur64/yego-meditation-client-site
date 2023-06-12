@@ -85,7 +85,7 @@ const router = createBrowserRouter([
       {
         path:'updateClass/:id',
         element:<InstructorRoute><UpdateClass></UpdateClass></InstructorRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/singleClass/${params.id}`)
+        loader:({params})=>fetch(`https://yoga-meditation-server-site.vercel.app/singleClass/${params.id}`)
        
       },
       // admin route  

@@ -9,12 +9,13 @@ const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure()
     const [modal, setModal] = useState({})
     const { data: allClasses = [], refetch } = useQuery(['allClass'], async () => {
+        
         const res = await axiosSecure.get('/allClass');
         return res.data;
     });
 
     const handleApproved = (id) => {
-        fetch(`http://localhost:5000/class-statusChange/${id}`, {
+        fetch(`https://yoga-meditation-server-site.vercel.app/class-statusChange/${id}`, {
             method: 'PATCH',
         })
             .then(res => res.json())

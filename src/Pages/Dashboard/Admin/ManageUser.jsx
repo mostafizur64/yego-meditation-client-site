@@ -12,7 +12,7 @@ const ManageUser = () => {
     })
 
     const handleMakeAdmin = item =>{
-        fetch(`http://localhost:5000/users/admin/${item._id}`,{
+        fetch(`https://yoga-meditation-server-site.vercel.app/users/admin/${item._id}`,{
             method:'PATCH',
 
         })
@@ -26,7 +26,7 @@ const ManageUser = () => {
         
     }
     const handleMakeInstructor = item=>{
-        fetch(`http://localhost:5000/users/instructor/${item._id}`,{
+        fetch(`https://yoga-meditation-server-site.vercel.app/users/instructor/${item._id}`,{
             method:'PATCH',
         })
         .then(res=>res.json())

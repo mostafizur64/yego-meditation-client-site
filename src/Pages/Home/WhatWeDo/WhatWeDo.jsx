@@ -25,7 +25,7 @@ const WhatWeDo = () => {
     return (
         <div>
             <div>
-                <h2 className="text-3xl text-center mt-8 text-orange-400">What We Do</h2>
+                <h2 className="text-3xl text-center mt-8 text-orange-400">--- What We Do ---</h2>
             </div>
          
             <div className=" w-full  grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8 "  data-aos="flip-right"data-aos-delay="10">

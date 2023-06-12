@@ -95,7 +95,7 @@ const CheckOutFrom = ({ payment }) => {
 
                     if (res.data.insertResult.insertedId) {
                       
-                        fetch(`http://localhost:5000/afterPaymentBooked/${_id}`,{
+                        fetch(`https://yoga-meditation-server-site.vercel.app/afterPaymentBooked/${_id}`,{
                             method:'PUT'
                         })
                             .then(res => res.json())

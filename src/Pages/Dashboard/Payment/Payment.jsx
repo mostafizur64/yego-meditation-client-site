@@ -16,7 +16,7 @@ const Payment = () => {
     // const total = bookedClassByStudent.reduce((sum, item) => sum + item.price, 0);
     // const price = parseFloat(total.toFixed(2))
     useEffect(()=>{
-        fetch(`http://localhost:5000/findSingleBook/${id}`)
+        fetch(`https://yoga-meditation-server-site.vercel.app/findSingleBook/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setPayment(data)
