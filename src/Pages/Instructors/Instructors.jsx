@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet-async";
 const Instructors = () => {
 
     const [axiosSecure] = useAxiosSecure()
-    const { data: allInstructor = [], refetch } = useQuery(['allInstructors'], async () => {
+    const { data: allInstructor = [], } = useQuery(['allInstructors'], async () => {
         const res = await axiosSecure.get('/allInstructor')
-        return res.data
+        return res.data;
     })
     // useEffect(() => {
     //     fetch('/instractors.json')
