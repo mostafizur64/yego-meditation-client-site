@@ -6,7 +6,7 @@
 #Payment stripe intrigreate
 #toast added 
 #firebase env file configer
-#sorting by date 
+#sorting by date  
 #search implement to the toyname 
 #live Link:https://yoga-meditation-project.web.app/
 #Admin info : USER ID:admin@gmail.com  || PASSWORD : Mostafizur90@

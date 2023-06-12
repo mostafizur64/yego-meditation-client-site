@@ -11,7 +11,7 @@ import { toast } from "react-hot-toast";
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
-    const [password, setPassword] = useState('');
+    // const [password, setPassword] = useState('');
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const location = useLocation();
