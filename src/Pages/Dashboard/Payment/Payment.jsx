@@ -24,7 +24,6 @@ const Payment = () => {
     },[id]);
     return (
         <div className="w-1/2 m-8">
-
             <Elements stripe={stripePromise}>
                 <CheckOutFrom payment={payment}></CheckOutFrom>
             </Elements>

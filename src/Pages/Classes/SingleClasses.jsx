@@ -15,7 +15,7 @@ const SingleClasses = ({ item }) => {
       
         if(user && user?.email){
             const bookedItem = { bookedId: _id,studentName:user.displayName,studentEmail:user.email, className, image, seat, price: parseInt(price), instructorName,instructorEmail };
-            fetch('https://yoga-meditation-server-site.vercel.app/bookedClass', {
+            fetch('http://localhost:5000/bookedClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -39,7 +39,7 @@ const SingleClasses = ({ item }) => {
 
 
     useEffect(() => {
-        fetch(`https://yoga-meditation-server-site.vercel.app/users-findUser/${user?.email}`)
+        fetch(`http://localhost:5000/users-findUser/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setFindUser(data);

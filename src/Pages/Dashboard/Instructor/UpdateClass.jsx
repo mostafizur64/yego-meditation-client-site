@@ -13,7 +13,7 @@ const UpdateClass = () => {
 //     const [findClass,setFindClass] = useState({});
 //     // const {user,loading} = useAuth()
 //   useEffect(()=>{
-//     fetch(`https://yoga-meditation-server-site.vercel.app/singleClass/${_id}`)
+//     fetch(`http://localhost:5000/singleClass/${_id}`)
 //     .then(res=>res.json())
 //     .then(data=>{
 //         console.log(data);
@@ -31,7 +31,7 @@ const UpdateClass = () => {
         const price = form.price.value;
         const updateClass = {className,seat,price}
         console.log(updateClass);
-        fetch(`https://yoga-meditation-server-site.vercel.app/updateClass/${_id}`,{
+        fetch(`http://localhost:5000/updateClass/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

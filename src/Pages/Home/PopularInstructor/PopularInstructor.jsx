@@ -39,8 +39,8 @@ const PopularInstructor = () => {
   return (
     <div>
       <div>
-        <h2 className="text-4xl text-extrabold text-center mt-8 text-orange-400">
-          --- Our Popular Instructor ---
+      <h2 className="text-4xl text-extrabold text-center mt-8 text-orange-400 font-extrabold">
+        Our Popular Instructor
         </h2>
       </div>
       <Swiper

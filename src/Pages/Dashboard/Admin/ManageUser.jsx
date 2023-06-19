@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useQuery } from "react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import axios from "axios";
+
 import { toast } from "react-hot-toast";
 
 const ManageUser = () => {
